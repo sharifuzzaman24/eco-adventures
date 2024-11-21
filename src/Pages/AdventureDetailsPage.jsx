@@ -1,71 +1,18 @@
-import { useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import NotFoundPage from "./NotFoundPage";
 
 const AdventureDetailsPage = () => {
     const { id } = useParams();
     // Fetch adventure data based on the ID (use static data for now)
-    const adventureData = [
-        {
-            "id": 1,
-            "title": "Rainforest Trekking Adventure",
-            "image": "https://img.freepik.com/premium-photo/rainforest-trekking-adventure_964851-112242.jpg?w=826",
-            "category": "Trekking",
-            "shortDescription": "Explore the lush rainforests and witness exotic wildlife.",
-            "cost": 150,
-            "location": "Amazon Rainforest, Brazil",
-            "duration": "3 Days",
-            "adventureLevel": "Moderate",
-            "ecoFriendlyFeatures": [
-                "Plastic-free zone",
-                "Renewable energy used at campsites",
-                "Wildlife-friendly policies"
-            ],
-            "includedItems": [
-                "Local Guide",
-                "Meals",
-                "Camping Gear",
-                "Rain Poncho"
-            ],
-            "specialInstructions": [
-                "Pack lightweight clothing.",
-                "Bring biodegradable toiletries.",
-                "Vaccinations recommended for tropical areas."
-            ]
-        },
-        {
-            "id": 2,
-            "title": "Kayaking Through Mangroves",
-            "image": "https://img.freepik.com/free-photo/people-taking-part-sustainable-travel-movement_23-2151049485.jpg?t=st=1732189274~exp=1732192874~hmac=acd6a68514eaa6a7ad8f752781af110a0423372091789a95d6101f666bf50e38&w=740",
-            "category": "Water Adventure",
-            "shortDescription": "Paddle through serene mangrove forests and discover their rich ecosystem.",
-            "cost": 75,
-            "location": "Florida Keys, USA",
-            "duration": "1 Day",
-            "adventureLevel": "Easy",
-            "ecoFriendlyFeatures": [
-                "Zero-impact navigation",
-                "No single-use plastics",
-                "Mangrove conservation support"
-            ],
-            "includedItems": [
-                "Kayak and paddle",
-                "Life jacket",
-                "Guided tour",
-                "Snacks and beverages"
-            ],
-            "specialInstructions": [
-                "Wear water-resistant sunscreen.",
-                "Carry a reusable water bottle.",
-                "Avoid disturbing the wildlife."
-            ]
-        }
-    ];
+    const adventureData = useLoaderData();
+    
 
     const adventure = adventureData.find((adventure) => adventure.id === parseInt(id));
 
     if (!adventure) {
-        return <div>Adventure not found.</div>;
+        return <NotFoundPage></NotFoundPage>;
     }
 
     return (

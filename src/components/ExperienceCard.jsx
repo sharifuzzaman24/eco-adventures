@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaLeaf } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const ExperienceCard = ({experience}) => {
 
@@ -21,7 +22,7 @@ const ExperienceCard = ({experience}) => {
                 }
                 </ul>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary text-white border-none bg-[#3498DB] w-full hover:bg-[#F39C12]">Buy Now</button>
+                    <Link to={`/adventure/${experience.id}`} className="btn btn-primary text-white border-none bg-[#3498DB] w-full hover:bg-[#F39C12]">Buy Now</Link>
                 </div>
             </div>
         </div>

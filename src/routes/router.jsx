@@ -7,6 +7,7 @@ import AdventureDetailsPage from '../Pages/AdventureDetailsPage';
 import NotFoundPage from '../Pages/NotFoundPage';
 import ProfilePage from '../Pages/ProfilePage';
 import UpdateProfilePage from '../Pages/UpdateProfilePage';
+import PrivateRoutes from './PrivateRoutes';
 
 
 
@@ -26,15 +27,16 @@ const router = createBrowserRouter([
     },
     {
         path: "/adventure/:id",
-        element: <AdventureDetailsPage></AdventureDetailsPage>,
+        element: <PrivateRoutes><AdventureDetailsPage></AdventureDetailsPage></PrivateRoutes>,
+        loader: () => fetch('/adventure.json')
     },
     {
         path: "/profile",
-        element: <ProfilePage></ProfilePage>,
+        element: <PrivateRoutes><ProfilePage></ProfilePage></PrivateRoutes>,
     },
     {
         path: "/update-profile",
-        element: <UpdateProfilePage></UpdateProfilePage>,
+        element: <PrivateRoutes><UpdateProfilePage></UpdateProfilePage></PrivateRoutes>,
     },
     {
         path: "/*",
