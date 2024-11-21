@@ -1,0 +1,265 @@
+[
+    {
+      "id": 1,
+      "title": "Rainforest Trekking Adventure",
+      "image": "https://img.freepik.com/premium-photo/rainforest-trekking-adventure_964851-112242.jpg?w=826",
+      "category": "Trekking",
+      "shortDescription": "Explore the lush rainforests and witness exotic wildlife.",
+      "cost": 150,
+      "bookingAvailability": true,
+      "location": "Amazon Rainforest, Brazil",
+      "duration": "3 Days",
+      "adventureLevel": "Moderate",
+      "includedItems": [
+        "Local Guide",
+        "Meals",
+        "Camping Gear",
+        "Rain Poncho"
+      ],
+      "ecoFriendlyFeatures": [
+        "Plastic-free zone",
+        "Renewable energy used at campsites",
+        "Wildlife-friendly policies"
+      ],
+      "maxGroupSize": 8,
+      "specialInstructions": [
+        "Pack lightweight clothing.",
+        "Bring biodegradable toiletries.",
+        "Vaccinations recommended for tropical areas."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Kayaking Through Mangroves",
+      "image": "https://img.freepik.com/free-photo/people-taking-part-sustainable-travel-movement_23-2151049485.jpg?t=st=1732189274~exp=1732192874~hmac=acd6a68514eaa6a7ad8f752781af110a0423372091789a95d6101f666bf50e38&w=740",
+      "category": "Water Adventure",
+      "shortDescription": "Paddle through serene mangrove forests and discover their rich ecosystem.",
+      "cost": 75,
+      "bookingAvailability": true,
+      "location": "Florida Keys, USA",
+      "duration": "1 Day",
+      "adventureLevel": "Easy",
+      "includedItems": [
+        "Kayak and paddle",
+        "Life jacket",
+        "Guided tour",
+        "Snacks and beverages"
+      ],
+      "ecoFriendlyFeatures": [
+        "Zero-impact navigation",
+        "No single-use plastics",
+        "Mangrove conservation support"
+      ],
+      "maxGroupSize": 12,
+      "specialInstructions": [
+        "Wear water-resistant sunscreen.",
+        "Carry a reusable water bottle.",
+        "Avoid disturbing the wildlife."
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Mountain Biking in the Alps",
+      "image": "https://img.freepik.com/free-photo/close-up-person-doing-mountain-biking_23-2151850192.jpg?t=st=1732189357~exp=1732192957~hmac=e4a27f586b9d0f32eb3417df02a34d01075a798c5a57a2d3b8ca241f1e7d10c4&w=826",
+      "category": "Cycling",
+      "shortDescription": "Ride through the stunning Alpine trails and experience breathtaking views.",
+      "cost": 200,
+      "bookingAvailability": true,
+      "location": "French Alps, France",
+      "duration": "2 Days",
+      "adventureLevel": "Advanced",
+      "includedItems": [
+        "Mountain bike rental",
+        "Safety gear",
+        "Guided trails",
+        "Accommodation"
+      ],
+      "ecoFriendlyFeatures": [
+        "Electric-powered support vehicles",
+        "Local organic meals",
+        "Trail maintenance funding"
+      ],
+      "maxGroupSize": 6,
+      "specialInstructions": [
+        "Ensure good physical fitness.",
+        "Carry minimal personal belongings.",
+        "Follow all safety guidelines."
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Glacier Hiking Expedition",
+      "image": "https://img.freepik.com/premium-photo/exploring-glacier-outlet-remote-hard-reach-area-winter_926199-2387363.jpg?w=826",
+      "category": "Hiking",
+      "shortDescription": "Traverse the ancient glaciers while learning about climate change.",
+      "cost": 250,
+      "bookingAvailability": true,
+      "location": "Iceland",
+      "duration": "2 Days",
+      "adventureLevel": "Challenging",
+      "includedItems": [
+        "Hiking gear",
+        "Professional guide",
+        "Safety equipment",
+        "Lunch and refreshments"
+      ],
+      "ecoFriendlyFeatures": [
+        "Low-impact hiking paths",
+        "Educational sessions on conservation",
+        "Carbon offset included in pricing"
+      ],
+      "maxGroupSize": 10,
+      "specialInstructions": [
+        "Wear waterproof clothing.",
+        "Bring thermal wear.",
+        "Follow guide's instructions closely."
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Safari on Solar-Powered Jeeps",
+      "image": "https://img.freepik.com/free-photo/traveling-with-off-road-car_23-2151472951.jpg?t=st=1732189511~exp=1732193111~hmac=66e90e6906520fdbc00c97d86db9226d5fe5ae7014b12d287d948853b45ac511&w=826",
+      "category": "Wildlife Safari",
+      "shortDescription": "Experience the savannah with minimal environmental impact.",
+      "cost": 300,
+      "bookingAvailability": true,
+      "location": "Serengeti, Tanzania",
+      "duration": "3 Days",
+      "adventureLevel": "Moderate",
+      "includedItems": [
+        "Safari guide",
+        "Solar-powered jeep ride",
+        "Lodging",
+        "Meals"
+      ],
+      "ecoFriendlyFeatures": [
+        "Solar-powered transportation",
+        "Eco-lodges",
+        "Support for local conservation projects"
+      ],
+      "maxGroupSize": 6,
+      "specialInstructions": [
+        "Carry binoculars.",
+        "Pack neutral-colored clothing.",
+        "Do not feed or disturb wildlife."
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Coral Reef Snorkeling",
+      "image": "https://img.freepik.com/free-photo/portrait-scuba-diver-sea-water-with-marine-life_23-2151456163.jpg?semt=ais_hybrid",
+      "category": "Snorkeling",
+      "shortDescription": "Discover vibrant marine life while promoting reef conservation.",
+      "cost": 120,
+      "bookingAvailability": true,
+      "location": "Great Barrier Reef, Australia",
+      "duration": "Half Day",
+      "adventureLevel": "Easy",
+      "includedItems": [
+        "Snorkeling gear",
+        "Guided marine tour",
+        "Photos",
+        "Snacks"
+      ],
+      "ecoFriendlyFeatures": [
+        "Eco-friendly sunscreen mandatory",
+        "Marine conservation awareness",
+        "Boat powered by renewable energy"
+      ],
+      "maxGroupSize": 15,
+      "specialInstructions": [
+        "Do not touch corals.",
+        "Avoid kicking the reef with fins.",
+        "Stay close to the guide."
+      ]
+    },
+  
+    {
+      "id": 8,
+      "title": "Wildflower Meadow Yoga Retreat",
+      "image": "https://img.freepik.com/premium-photo/women-meditating-field-flowers-with-mountain-view_690064-10142.jpg?semt=ais_hybrid",
+      "category": "Wellness",
+      "shortDescription": "Reconnect with nature through yoga in a serene meadow.",
+      "cost": 100,
+      "bookingAvailability": true,
+      "location": "Tuscany, Italy",
+      "duration": "2 Days",
+      "adventureLevel": "Easy",
+      "includedItems": [
+        "Yoga mats",
+        "Instructor-led sessions",
+        "Organic meals",
+        "Meditation workshops"
+      ],
+      "ecoFriendlyFeatures": [
+        "Plastic-free zone",
+        "Locally sourced meals",
+        "Solar-powered venue"
+      ],
+      "maxGroupSize": 20,
+      "specialInstructions": [
+        "Bring comfortable clothing.",
+        "Avoid perfumes or strong scents.",
+        "Respect others' space."
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Eco-Village Homestay",
+      "image": "https://img.freepik.com/free-photo/typical-norwegian-rural-cottage-with-breathtaking-landscape-beautiful-greenery-norway_181624-9584.jpg?semt=ais_hybrid",
+      "category": "Cultural Experience",
+      "shortDescription": "Immerse yourself in eco-living practices with a local community.",
+      "cost": 180,
+      "bookingAvailability": true,
+      "location": "Kerala, India",
+      "duration": "3 Days",
+      "adventureLevel": "Moderate",
+      "includedItems": [
+        "Homestay accommodation",
+        "Local meals",
+        "Workshops on eco-friendly practices",
+        "Village tour"
+      ],
+      "ecoFriendlyFeatures": [
+        "100% organic meals",
+        "Community-run sustainable practices",
+        "No motorized transport in the area"
+      ],
+      "maxGroupSize": 10,
+      "specialInstructions": [
+        "Respect local customs.",
+        "Avoid waste generation.",
+        "Participate in activities actively."
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Stargazing in a Dark Sky Reserve",
+      "image": "https://img.freepik.com/free-photo/young-woman-mountains-observing-beautiful-starry-night-comet_651396-3445.jpg?semt=ais_hybrid",
+      "category": "Astronomy",
+      "shortDescription": "Experience the wonder of the night sky in an eco-protected area.",
+      "cost": 80,
+      "bookingAvailability": true,
+      "location": "Atacama Desert, Chile",
+      "duration": "1 Night",
+      "adventureLevel": "Easy",
+      "includedItems": [
+        "Telescope access",
+        "Professional guide",
+        "Hot beverages",
+        "Blankets"
+      ],
+      "ecoFriendlyFeatures": [
+        "Light pollution-free area",
+        "Renewable energy for facilities",
+        "Support for local astronomy programs"
+      ],
+      "maxGroupSize": 15,
+      "specialInstructions": [
+        "Wear warm clothing.",
+        "Avoid using flashlights.",
+        "Turn off mobile devices."
+      ]
+    }
+  ]
+  
