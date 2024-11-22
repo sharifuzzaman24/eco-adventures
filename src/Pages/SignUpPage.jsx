@@ -42,8 +42,10 @@ const SignUpPage = () => {
         .then((userCredential) => {
           const user = userCredential.user;
           setUser(user);
+          e.target.reset();
           updateUserProfile({displayName:name, photoURL: photo}).then(() => {
             navigate('/');
+            e.target.reset();
           }).catch((error) => {
             // An error occurred
             // ...

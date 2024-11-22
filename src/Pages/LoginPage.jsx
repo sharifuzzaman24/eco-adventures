@@ -8,29 +8,42 @@ import { AuthContext } from "../provider/AuthProvider";
 
 const LoginPage = () => {
 
-    const {userLogin, setUser} = useContext(AuthContext);
+
+    const { userLogin, setUser, signInWithGoogle } = useContext(AuthContext);
     const [error, setError] = useState({});
 
     const location = useLocation();
     const navigate = useNavigate();
 
-    const handleSubmit = (e) =>{
+    const handleSignInWithGoogle = () => {
+        signInWithGoogle().then((result) => {
+            console.log("Google Sign-In Result:", result);
+            navigate('/profile')
+          }).catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+           
+          });
+        
+    }
+
+    const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
         userLogin(email, password)
-        .then((userCredential) => {
-            
-            const user = userCredential.user;
-            setUser(user);
+            .then((userCredential) => {
 
-            navigate(location?.state ? location.state : '/')
-            
-          })
-          .catch((err) => {
-            setError({...error, login: err.code})
-          });
+                const user = userCredential.user;
+                setUser(user);
+                e.target.reset();
+                navigate(location?.state ? location.state : '/')
+
+            })
+            .catch((err) => {
+                setError({ ...error, login: err.code })
+            });
     }
 
     return (
@@ -39,7 +52,7 @@ const LoginPage = () => {
             <div className="pt-32 pb-40 min-h-screen flex justify-center items-center bg-[#E6F9F1]">
                 <div className="bg-white p-8 rounded-lg shadow-lg w-[450px]">
                     <h2 className="text-4xl font-semibold text-center text-[#2ECC71] mb-6">Login</h2>
-                    
+
                     <form onSubmit={handleSubmit}>
                         <div className="mb-4">
                             <label className="block text-lg font-medium text-[#2ECC71]">Email</label>
@@ -60,8 +73,8 @@ const LoginPage = () => {
                             />
                         </div>
                         <div className="flex justify-between items-center mb-6">
-                        {error.login && <p className="text-red-500 text-base">{error.login}</p>}
-                        <p className="text-base text-gray-600">Forget Password?</p>
+                            {error.login && <p className="text-red-500 text-base">{error.login}</p>}
+                            <p className="text-base text-gray-600">Forget Password?</p>
                         </div>
                         <button
                             type="submit"
@@ -69,15 +82,16 @@ const LoginPage = () => {
                         >
                             Login
                         </button>
-                        <button
-                            
-                            className="mt-6 flex items-center justify-center gap-3 w-full bg-[#DB4437] text-white font-semibold text-base py-3 px-6 rounded-lg hover:bg-[#C1351D] transition-colors"
-                        >
-                            {/* Google Icon from React Icons */}
-                            <FaGoogle className="w-6 h-6" />
-                            <span>Sign in with Google</span>
-                        </button>
+
                     </form>
+                    <button onClick={handleSignInWithGoogle}
+
+                        className="mt-6 flex items-center justify-center gap-3 w-full bg-[#DB4437] text-white font-semibold text-base py-3 px-6 rounded-lg hover:bg-[#C1351D] transition-colors"
+                    >
+                        {/* Google Icon from React Icons */}
+                        <FaGoogle className="w-6 h-6" />
+                        <span>Sign in with Google</span>
+                    </button>
                     <p className="mt-4 text-base text-center">
                         Don't have an account? <Link to={'/register'} className="text-[#3498DB] hover:text-[#F39C12]">Sign Up</Link>
                     </p>

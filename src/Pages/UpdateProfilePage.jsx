@@ -21,6 +21,7 @@ const UpdateProfilePage = () => {
                 displayName: name,
                 photoURL: photo,
             }));
+            e.target.reset();
         } catch (error) {
             console.error("Failed to update profile", error);
             // Handle error appropriately
