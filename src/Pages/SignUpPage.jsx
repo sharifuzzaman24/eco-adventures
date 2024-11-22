@@ -3,12 +3,12 @@ import { AuthContext } from "../provider/AuthProvider";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUpPage = () => {
-    const { createNewUser, setUser } = useContext(AuthContext);
+    const { createNewUser, setUser, updateUserProfile } = useContext(AuthContext);
     const [error, setError] = useState({});
-  
+    const navigate = useNavigate();
     const handleSubmit = (e) => {
       e.preventDefault();
       const form = new FormData(e.target);
@@ -17,7 +17,6 @@ const SignUpPage = () => {
       const photo = form.get("photo");
       const password = form.get("password");
   
-      // Validation logic
       const newErrors = {};
       if (!/[a-z]/.test(password)) {
         newErrors.password = "Password must contain at least one lowercase letter.";
@@ -31,20 +30,24 @@ const SignUpPage = () => {
       
       
   
-      // Check for errors
       if (Object.keys(newErrors).length > 0) {
-        setError(newErrors); // Update errors
-        return; // Stop form submission
+        setError(newErrors);
+        return;
       }
   
-      // Clear errors if no validation issues
+
       setError({});
-  
-      // Proceed with user creation
+
       createNewUser(email, password)
         .then((userCredential) => {
           const user = userCredential.user;
           setUser(user);
+          updateUserProfile({displayName:name, photoURL: photo}).then(() => {
+            navigate('/');
+          }).catch((error) => {
+            // An error occurred
+            // ...
+          });
         })
         .catch((error) => {
           console.log(error.code, error.message);
