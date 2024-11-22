@@ -18,7 +18,7 @@ const Experiences = () => {
             <div>
                 <h1 className='text-2xl font-bold text-center mb-10 text-[#2ECC71] mt-20'>Explore Our Eco-Adventure</h1>
             </div>
-            <div className='grid grid-cols-3 gap-10 justify-items-center items-center'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 justify-items-center items-center'>
                 {
                     experiencesdata.map(experience => (
                         <ExperienceCard key={experience.id} experience={experience} />
