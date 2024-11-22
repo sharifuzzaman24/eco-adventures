@@ -8,7 +8,6 @@ import useDocumentTitle from "../useDocumentTitle";
 const AdventureDetailsPage = () => {
     useDocumentTitle();
     const { id } = useParams();
-    // Fetch adventure data based on the ID (use static data for now)
     const adventureData = useLoaderData();
 
 
@@ -20,11 +19,11 @@ const AdventureDetailsPage = () => {
     const [showModal, setShowModal] = useState(false);
 
     const openGoogleMeet = () => {
-        const meetLink = "https://meet.google.com/"; // Replace with your Google Meet link
+        const meetLink = "https://meet.google.com/"; 
         const now = new Date();
         const currentHour = now.getHours();
 
-        // Check if the current time is between 10:00 AM (10) and 8:00 PM (20)
+        
         if (currentHour >= 10 && currentHour < 20) {
             window.open(meetLink, "_blank", "noopener,noreferrer");
         } else {
@@ -37,7 +36,6 @@ const AdventureDetailsPage = () => {
             <Navbar></Navbar>
             <div className="bg-[#E6F9F1] min-h-screen pt-20">
                 <div className="w-11/12 mx-auto py-8">
-                    {/* Adventure Header */}
                     <div className="flex flex-col lg:flex-row gap-8">
                         <div className="w-full lg:w-1/2">
                             <img
@@ -59,7 +57,6 @@ const AdventureDetailsPage = () => {
                         </div>
                     </div>
 
-                    {/* Adventure Details Section */}
                     <div className="mt-8">
                         <h2 className="text-3xl font-semibold text-[#2ECC71] mb-4">Included Items</h2>
                         <ul className="list-disc ml-6 text-lg text-gray-700">
@@ -84,7 +81,7 @@ const AdventureDetailsPage = () => {
                     </div>
                 </div>
             </div>
-            {/* Modal */}
+
             {showModal && (
 
 

@@ -7,7 +7,7 @@ const useDocumentTitle = () => {
     useEffect(() => {
         const pathname = location.pathname;
 
-        // Set the title based on the current path
+      
         if (pathname === "/") {
             document.title = "Home | Eco Adventures";
         } else if (pathname === "/login") {
@@ -23,7 +23,7 @@ const useDocumentTitle = () => {
         } else {
             document.title = "Adventure | Eco Adventures";
         }
-    }, [location]); // Runs every time the location changes
+    }, [location]);
 };
 
 export default useDocumentTitle;

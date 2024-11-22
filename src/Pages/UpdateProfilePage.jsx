@@ -14,11 +14,10 @@ const UpdateProfilePage = () => {
         const form = new FormData(e.target);
         const name = form.get("name");
         const photo = form.get("photo");
-    
+
         try {
             await updateUserProfile({ displayName: name, photoURL: photo });
-    
-            // Update the local `user` context to trigger a UI update
+
             setUser((prev) => ({
                 ...prev,
                 displayName: name,
@@ -28,10 +27,9 @@ const UpdateProfilePage = () => {
             navigate('/profile')
         } catch (error) {
             console.error("Failed to update profile", error);
-            // Handle error appropriately
         }
     };
-    
+
 
 
     return (
@@ -48,7 +46,7 @@ const UpdateProfilePage = () => {
                         {/* Profile Image */}
                         <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-[#3498DB] mb-4">
                             <img
-                                src={user.photoURL} // Show updated or existing profile picture
+                                src={user.photoURL}
                                 alt="Profile"
                                 className="w-full h-full object-cover"
                             />
@@ -56,7 +54,7 @@ const UpdateProfilePage = () => {
 
 
                         <form className="w-full flex flex-col items-center" onSubmit={handleSubmit}>
-                            {/* Name Field */}
+
                             <div className="w-full mb-4">
                                 <label htmlFor="name" className="block text-sm font-semibold text-gray-700">Name</label>
                                 <input
@@ -68,7 +66,7 @@ const UpdateProfilePage = () => {
                                 />
                             </div>
 
-                            {/* Email Field */}
+
                             <div className="w-full mb-4">
                                 <label htmlFor="photo" className="block text-sm font-semibold text-gray-700">Photo-URL</label>
                                 <input
@@ -80,7 +78,7 @@ const UpdateProfilePage = () => {
                                 />
                             </div>
 
-                            {/* Save Changes Button */}
+
                             <button
                                 type="submit"
                                 className="bg-[#3498DB] text-white font-semibold text-lg py-3 px-6 rounded-lg hover:bg-[#F39C12] transition-colors mt-6"

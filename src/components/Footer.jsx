@@ -47,7 +47,7 @@ const Footer = () => {
                 </div>
             </nav>
             <aside>
-                <p className='text-[#F4F4F4]'>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+                <p className='text-[#F4F4F4]'>Copyright © {new Date().getFullYear()} - All right reserved Eco Adventure</p>
             </aside>
         </footer>
     );

@@ -5,8 +5,8 @@ import Footer from "../components/Footer";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import useDocumentTitle from "../useDocumentTitle";
-import { toast } from "react-toastify"; // Import toast
-import 'react-toastify/dist/ReactToastify.css'; // Import toast styles
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignUpPage = () => {
   useDocumentTitle();
@@ -35,7 +35,7 @@ const SignUpPage = () => {
 
     if (Object.keys(newErrors).length > 0) {
       setError(newErrors);
-      // Show error toast
+      
       toast.error(error.password);
       return;
     }
@@ -52,19 +52,18 @@ const SignUpPage = () => {
           e.target.reset();
           toast.success("Sign-up successful!");
         }).catch((error) => {
-          // Show error toast for profile update error
+         
           toast.error("Error updating profile: " + error.message);
         });
       })
       .catch((error) => {
-        // Show error toast for sign-up error
+       
         toast.error("Error signing up: " + error.message);
       });
   };
 
   const handleSignUpWithGoogle = () => {
     signInWithGoogle().then((result) => {
-      console.log("Google Sign-In Result:", result);
       navigate('/profile');
       toast.success("Google sign-in successful!");
     }).catch((error) => {

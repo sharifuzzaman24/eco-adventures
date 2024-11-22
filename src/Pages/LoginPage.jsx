@@ -5,8 +5,8 @@ import { FaGoogle } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import useDocumentTitle from "../useDocumentTitle";
-import { toast } from "react-toastify"; // Import toast
-import 'react-toastify/dist/ReactToastify.css'; // Import toast styles
+import { toast } from "react-toastify"; 
+import 'react-toastify/dist/ReactToastify.css';
 
 const LoginPage = () => {
   useDocumentTitle();
@@ -49,7 +49,7 @@ const LoginPage = () => {
       })
       .catch((err) => {
         setError({ ...error, login: err.code });
-        toast.error("Login Failed: " + err.message); // Show error toast
+        toast.error("Login Failed: " + err.message);
       });
   };
 

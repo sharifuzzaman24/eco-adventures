@@ -13,7 +13,6 @@ const signInWithGoogle = () => {
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-    console.log(user);
 
     const createNewUser = (email, password) =>{
         setLoading(true);
@@ -35,9 +34,9 @@ const AuthProvider = ({children}) => {
     };
     const resetPassword = async (email) => {
         try {
-            await sendPasswordResetEmail(auth, email); // Firebase method
+            await sendPasswordResetEmail(auth, email); 
         } catch (error) {
-            throw error; // Propagate the error to be caught in the component
+            throw error; 
         }
     };
     
