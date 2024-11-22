@@ -3,8 +3,10 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import NotFoundPage from "./NotFoundPage";
 import { useState } from "react";
+import useDocumentTitle from "../useDocumentTitle";
 
 const AdventureDetailsPage = () => {
+    useDocumentTitle();
     const { id } = useParams();
     // Fetch adventure data based on the ID (use static data for now)
     const adventureData = useLoaderData();

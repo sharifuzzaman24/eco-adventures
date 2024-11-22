@@ -3,8 +3,10 @@ import Footer from "../components/Footer";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import useDocumentTitle from "../useDocumentTitle";
 
 const UpdateProfilePage = () => {
+    useDocumentTitle();
     const { user, setUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
     const handleSubmit = async (e) => {

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { AuthContext } from "../provider/AuthProvider";
+import useDocumentTitle from "../useDocumentTitle";
 
 const ProfilePage = () => {
     const {user} = useContext(AuthContext);
@@ -12,7 +13,7 @@ const ProfilePage = () => {
         // Navigate to the update profile page
         navigate("/update-profile");
     };
-
+    useDocumentTitle();
 
     return (
         <>

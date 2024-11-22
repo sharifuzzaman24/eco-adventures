@@ -3,8 +3,10 @@ import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import AdventurePage from "../components/AdventurePage";
+import useDocumentTitle from "../useDocumentTitle";
 
 const Home = () => {
+    useDocumentTitle();
     return (
         <>
             <header>

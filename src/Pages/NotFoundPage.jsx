@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom";
+import useDocumentTitle from "../useDocumentTitle";
 
 const NotFoundPage = () => {
     const navigate = useNavigate();
-
+    useDocumentTitle();
     return (
         <div className="flex items-center justify-center min-h-screen bg-[#E6F9F1]">
             <div className="text-center p-8 bg-white rounded-lg shadow-lg w-full max-w-lg">

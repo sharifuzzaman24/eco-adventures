@@ -4,10 +4,11 @@ import Navbar from "../components/Navbar";
 import { FaGoogle } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import useDocumentTitle from "../useDocumentTitle";
 
 
 const LoginPage = () => {
-
+    useDocumentTitle();
 
     const { userLogin, setUser, signInWithGoogle } = useContext(AuthContext);
     const [error, setError] = useState({});

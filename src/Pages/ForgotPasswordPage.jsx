@@ -1,8 +1,10 @@
 import { useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import useDocumentTitle from "../useDocumentTitle";
 
 const ForgotPasswordPage = () => {
+    useDocumentTitle();
     const location = useLocation();
     const navigate = useNavigate();
     const { resetPassword } = useContext(AuthContext);

@@ -4,8 +4,10 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
+import useDocumentTitle from "../useDocumentTitle";
 
 const SignUpPage = () => {
+  useDocumentTitle();
   const { createNewUser, setUser, updateUserProfile, signInWithGoogle } = useContext(AuthContext);
   const [error, setError] = useState({});
   const navigate = useNavigate();
