@@ -5,12 +5,15 @@ import Footer from "../components/Footer";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import useDocumentTitle from "../useDocumentTitle";
+import { toast } from "react-toastify"; // Import toast
+import 'react-toastify/dist/ReactToastify.css'; // Import toast styles
 
 const SignUpPage = () => {
   useDocumentTitle();
   const { createNewUser, setUser, updateUserProfile, signInWithGoogle } = useContext(AuthContext);
   const [error, setError] = useState({});
   const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
@@ -30,13 +33,12 @@ const SignUpPage = () => {
       newErrors.password = "Password must be at least 6 characters long.";
     }
 
-
-
     if (Object.keys(newErrors).length > 0) {
       setError(newErrors);
+      // Show error toast
+      toast.error(error.password);
       return;
     }
-
 
     setError({});
 
@@ -48,32 +50,31 @@ const SignUpPage = () => {
         updateUserProfile({ displayName: name, photoURL: photo }).then(() => {
           navigate('/');
           e.target.reset();
+          toast.success("Sign-up successful!");
         }).catch((error) => {
-          // An error occurred
-          // ...
+          // Show error toast for profile update error
+          toast.error("Error updating profile: " + error.message);
         });
       })
       .catch((error) => {
-        console.log(error.code, error.message);
+        // Show error toast for sign-up error
+        toast.error("Error signing up: " + error.message);
       });
   };
-
-
 
   const handleSignUpWithGoogle = () => {
     signInWithGoogle().then((result) => {
       console.log("Google Sign-In Result:", result);
-      navigate('/profile')
+      navigate('/profile');
+      toast.success("Google sign-in successful!");
     }).catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-
+      toast.error("Google sign-in error: " + error.message);
     });
+  };
 
-  }
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar />
       <div className="py-28 min-h-screen flex justify-center items-center bg-[#E6F9F1]">
         <div className="bg-white p-8 rounded-lg shadow-lg w-[450px]">
           <h2 className="text-4xl font-semibold text-center text-[#2ECC71] mb-6">
@@ -82,9 +83,7 @@ const SignUpPage = () => {
 
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label className="block text-lg font-medium text-[#2ECC71]">
-                Name
-              </label>
+              <label className="block text-lg font-medium text-[#2ECC71]">Name</label>
               <input
                 name="name"
                 type="text"
@@ -93,9 +92,7 @@ const SignUpPage = () => {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-lg font-medium text-[#2ECC71]">
-                Photo-URL
-              </label>
+              <label className="block text-lg font-medium text-[#2ECC71]">Photo-URL</label>
               <input
                 name="photo"
                 type="text"
@@ -104,9 +101,7 @@ const SignUpPage = () => {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-lg font-medium text-[#2ECC71]">
-                Email
-              </label>
+              <label className="block text-lg font-medium text-[#2ECC71]">Email</label>
               <input
                 required
                 name="email"
@@ -116,9 +111,7 @@ const SignUpPage = () => {
               />
             </div>
             <div className="mb-6">
-              <label className="block text-lg font-medium text-[#2ECC71]">
-                Password
-              </label>
+              <label className="block text-lg font-medium text-[#2ECC71]">Password</label>
               <input
                 required
                 name="password"
@@ -126,9 +119,7 @@ const SignUpPage = () => {
                 placeholder="Enter your password"
                 className="w-full px-4 py-3 border rounded-md text-base"
               />
-              {error.password && (
-                <p className="text-red-500 mt-2">{error.password}</p>
-              )}
+              {error.password && <p className="text-red-500 mt-2">{error.password}</p>}
             </div>
 
             <button
@@ -137,7 +128,6 @@ const SignUpPage = () => {
             >
               Sign Up
             </button>
-
           </form>
           <button
             onClick={handleSignUpWithGoogle}
@@ -148,16 +138,14 @@ const SignUpPage = () => {
           </button>
           <p className="mt-4 text-base text-center">
             Already have an account?{" "}
-            <Link
-              to={"/login"}
-              className="text-[#3498DB] hover:text-[#F39C12]"
-            >
+            <Link to={"/login"} className="text-[#3498DB] hover:text-[#F39C12]">
               Login
             </Link>
           </p>
         </div>
       </div>
-      <Footer></Footer>
+      <Footer />
+      
     </>
   );
 };
