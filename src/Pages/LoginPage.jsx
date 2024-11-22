@@ -11,6 +11,11 @@ const LoginPage = () => {
 
     const { userLogin, setUser, signInWithGoogle } = useContext(AuthContext);
     const [error, setError] = useState({});
+    const [email, setEmail] = useState("");
+    const handleForgotPassword = () => {
+        // Navigate to forgot password page with the email
+        navigate("/forgot-password", { state: { email } });
+    };
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -57,6 +62,7 @@ const LoginPage = () => {
                         <div className="mb-4">
                             <label className="block text-lg font-medium text-[#2ECC71]">Email</label>
                             <input
+                                onChange={(e) => setEmail(e.target.value)}
                                 name="email"
                                 type="email"
                                 placeholder="Enter your email"
@@ -74,7 +80,7 @@ const LoginPage = () => {
                         </div>
                         <div className="flex justify-between items-center mb-6">
                             {error.login && <p className="text-red-500 text-base">{error.login}</p>}
-                            <p className="text-base text-gray-600">Forget Password?</p>
+                            <p onClick={handleForgotPassword} className="text-base text-gray-600 cursor-pointer">Forget Password?</p>
                         </div>
                         <button
                             type="submit"

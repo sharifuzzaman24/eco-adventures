@@ -2,10 +2,11 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 const UpdateProfilePage = () => {
     const { user, setUser, updateUserProfile } = useContext(AuthContext);
-
+    const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
         const form = new FormData(e.target);
@@ -22,6 +23,7 @@ const UpdateProfilePage = () => {
                 photoURL: photo,
             }));
             e.target.reset();
+            navigate('/profile')
         } catch (error) {
             console.error("Failed to update profile", error);
             // Handle error appropriately

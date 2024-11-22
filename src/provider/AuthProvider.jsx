@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import auth from "../firebase/firebase.config";
 
 
@@ -33,6 +33,14 @@ const AuthProvider = ({children}) => {
     const updateUserProfile = (updatedData) => {
         return updateProfile(auth.currentUser, updatedData);
     };
+    const resetPassword = async (email) => {
+        try {
+            await sendPasswordResetEmail(auth, email); // Firebase method
+        } catch (error) {
+            throw error; // Propagate the error to be caught in the component
+        }
+    };
+    
 
 
     const authInfo = {
@@ -44,6 +52,7 @@ const AuthProvider = ({children}) => {
         loading,
         updateUserProfile,
         signInWithGoogle,
+        resetPassword
     }
 
     useEffect(()=>{

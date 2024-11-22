@@ -8,6 +8,7 @@ import NotFoundPage from '../Pages/NotFoundPage';
 import ProfilePage from '../Pages/ProfilePage';
 import UpdateProfilePage from '../Pages/UpdateProfilePage';
 import PrivateRoutes from './PrivateRoutes';
+import ForgotPasswordPage from '../Pages/ForgotPasswordPage';
 
 
 
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
     {
         path: "/update-profile",
         element: <PrivateRoutes><UpdateProfilePage></UpdateProfilePage></PrivateRoutes>,
+    },
+    {
+        path: '/forgot-password',
+        element: <ForgotPasswordPage></ForgotPasswordPage>
     },
     {
         path: "/*",
