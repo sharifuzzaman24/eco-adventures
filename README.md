@@ -58,10 +58,10 @@ This project aims to:
 ![Adventure Details Page](./src/assets/project-screenshots/details.png)
 
 ### User Profile Page
-![Adventure Details Page](./src/assets/project-screenshots/profile.png)
+![User Profile Page](./src/assets/project-screenshots/profile.png)
 
 ### User Profile Update Page
-![Adventure Details Page](./src/assets/project-screenshots/profile-update.png)
+![User Profile Update Page](./src/assets/project-screenshots/profile-update.png)
 
 ### Registration Page
 ![Registration Page](./src/assets/project-screenshots/registation.png)
@@ -129,7 +129,7 @@ To secure sensitive data, Firebase configuration keys are stored using environme
 
 ## Author
 Sharifuzzaman Eusuf  
-[LinkedIn Profile](https://www.linkedin.com/in/sharifuzzaman24/) | [GitHub Profile](https://github.com/sharifuzzaman24)
+[Portfolio](https://sharifuzzaman.vercel.app/) | [Linkedin Profile](https://www.linkedin.com/in/sharifuzzaman24/)
 
 ---
 Thank you for exploring the **Eco-Adventures**. Let the journey to eco-friendly adventures begin!
